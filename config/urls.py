@@ -15,7 +15,7 @@ schema_view = get_schema_view(
         title="Omnaible QA API",
         default_version='v1',
         description="API for Question Answer tool",
-        terms_of_service="https://github.com/shamspias",
+        terms_of_service="https://omnaible.com",
         contact=openapi.Contact(email="shamspias0@gmail.com"),
         license=openapi.License(name="Omnaible License"),
     ),
