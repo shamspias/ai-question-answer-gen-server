@@ -9,10 +9,7 @@ class QuestionsSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Questions
-        fields = [
-            'types',
-            'questions',
-        ]
+        fields = "__all__"
 
 
 class AnswerSerializers(serializers.ModelSerializer):
@@ -22,7 +19,4 @@ class AnswerSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Answer
-        fields = [
-            'question',
-            'number'
-        ]
+        fields = "__all__"
