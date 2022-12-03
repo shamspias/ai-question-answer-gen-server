@@ -7,3 +7,11 @@ class Questions(models.Model):
     """
     types = models.CharField(max_length=40, blank=True, null=True)
     questions = models.TextField(blank=True, null=True)
+
+
+class Answer(models.Model):
+    """
+    Answer model
+    """
+    question = models.TextField(blank=True, null=True)
+    answer = models.TextField(blank=True, null=True)

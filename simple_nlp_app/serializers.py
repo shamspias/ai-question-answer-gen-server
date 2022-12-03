@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Questions
+from .models import Questions, Answer
 
 
 class QuestionsSerializers(serializers.ModelSerializer):
@@ -13,3 +13,13 @@ class QuestionsSerializers(serializers.ModelSerializer):
             'types',
             'questions',
         ]
+
+
+class AnswerSerializers(serializers.ModelSerializer):
+    """
+    Serializer class for Answer
+    """
+
+    class Meta:
+        model = Answer
+        fields = '__all__'
