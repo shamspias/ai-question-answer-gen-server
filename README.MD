@@ -1,31 +1,9 @@
-# Django Rest Framework boilerplate for GPT-3
+# ai-question-answer-genarator
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-This is boilerplate for starting fresh new DRF projects. It's built using [cookiecutter-django-rest](https://github.com/agconti/cookiecutter-django-rest).
+Automatic question and answer generation tools using openai gpt3
 
-## Highlights
-
-- Modern Python development with Python 3.8+
-- Bleeding edge Django 4.1+
-- Fully dockerized, local development via docker-compose.(On Going)
-- PostgreSQL
-- Full test coverage, continuous integration, and continuous deployment.(On Going)
-- Celery tasks
-- Integrated GPT-3
-
-### Features built-in
-
-- JSON Web Token authentication using [Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/)
-- Social (FB + G+) signup/sigin
-- API Throttling enabled
-- Password reset endpoints
-- User model with profile picture field using Easy Thumbnails
-- Files management (thumbnails generated automatically for images)
-- Sentry setup
-- Swagger API docs out-of-the-box
-- Code formatter [black](https://black.readthedocs.io/en/stable/)
-- Tests (with mocking and factories) with code-coverage support
 
 ## API Docs
 
