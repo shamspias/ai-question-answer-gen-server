@@ -12,12 +12,12 @@ from simple_nlp_app.urls import simple_app_router
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="API Title",
+        title="Omnaible QA API",
         default_version='v1',
-        description="API for BoilerPlate",
+        description="API for Question Answer tool",
         terms_of_service="https://github.com/shamspias",
-        contact=openapi.Contact(email="shamsuddinpias0@gmail.com"),
-        license=openapi.License(name="BSD License"),
+        contact=openapi.Contact(email="shamspias0@gmail.com"),
+        license=openapi.License(name="Omnaible License"),
     ),
     public=True,
     permission_classes=[permissions.AllowAny, ],
