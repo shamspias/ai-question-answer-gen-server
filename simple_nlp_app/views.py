@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import QuestionsSerializers, AnswerSerializers
 from .models import Questions, Answer
-from .task import generate_questions
+from .task import generate_questions, generate_answers
 
 
 class QuestionGenViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
@@ -32,5 +32,5 @@ class AnswerGenViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
 
     def create(self, request, *args, **kwargs):
         data = request.data
-        context = generate_questions(data['question'], data['answer'])
+        context = generate_answers(data['number'], data['question'])
         return Response(context, status=status.HTTP_201_CREATED, )
