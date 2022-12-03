@@ -1,5 +1,8 @@
 from .common import *  # noqa
 
+STATIC_ROOT = '/home/ubuntu/qa_tool/public_html/static'
+MEDIA_ROOT = '/home/ubuntu/qa-tool/public_html/media'
+
 ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS += ["gunicorn", ]
 
