@@ -14,4 +14,5 @@ class Answer(models.Model):
     Answer model
     """
     question = models.TextField(blank=True, null=True)
+    number = models.IntegerField(default=1)
     answer = models.TextField(blank=True, null=True)
