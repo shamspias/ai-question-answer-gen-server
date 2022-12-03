@@ -5,7 +5,8 @@ import openai
 
 
 @shared_task(name='GenerateQuestions')
-def generate_questions(types, prompt):
+def generate_questions(number=1, types="short", person1="Sales Representative", vertical="AI", person2="CEO",
+                       prompt=""):
     """
     Method to generate questions based on few questions from OpenAI using GPT3
     """
@@ -13,7 +14,8 @@ def generate_questions(types, prompt):
 
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="Write \n {}\n questions based on {}\n-".format(types, prompt),
+        prompt="Write {} {} questions from {} on {} to {} based on {}\n-".format(number, types, person1, vertical,
+                                                                                 person2, prompt),
         temperature=0.7,
         max_tokens=256,
         top_p=1,
@@ -37,7 +39,8 @@ def generate_questions(types, prompt):
 
 
 @shared_task(name='GenerateAnswers')
-def generate_answers(number, prompt):
+def generate_answers(number=1, types="short", person1="Sales Representative", vertical="AI", person2="CEO",
+                     prompt=""):
     """
     Method to generate question answers from OpenAI using GPT3
     """
@@ -45,7 +48,8 @@ def generate_answers(number, prompt):
 
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="Write {} answer for \n {}\n-".format(number, prompt),
+        prompt="Write {} {} answer as a {} given to {} about {} from \n {}\n-".format(number, types, person1,
+                                                                                      person2, vertical, prompt),
         temperature=0.7,
         max_tokens=256,
         top_p=1,
