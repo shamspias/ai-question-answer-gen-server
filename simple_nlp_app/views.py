@@ -17,7 +17,8 @@ class QuestionGenViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
 
     def create(self, request, *args, **kwargs):
         data = request.data
-        context = generate_questions(data['types'], data['questions'])
+        context = generate_questions(data['number'], data['types'], data['sales_person'], data['vertical'],
+                                     data['persona'], data['questions'])
         return Response(context, status=status.HTTP_201_CREATED, )
 
 
@@ -32,5 +33,6 @@ class AnswerGenViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
 
     def create(self, request, *args, **kwargs):
         data = request.data
-        context = generate_answers(data['number'], data['question'])
+        context = generate_answers(data['number'], data['types'], data['sales_person'], data['vertical'],
+                                   data['persona'], data['question'])
         return Response(context, status=status.HTTP_201_CREATED, )
