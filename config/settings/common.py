@@ -136,19 +136,19 @@ CORS_ALLOW_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS')
 CORS_ALLOW_ORIGINS = CORS_ALLOW_ORIGINS.split(',')
 CORS_ALLOWED_ORIGINS = CORS_ALLOW_ORIGINS
 
-CORS_ALLOW_METHODS = (
-    'GET',
-    'POST',
-    'PUT',
-    'PATCH',
-    'DELETE',
-    'OPTIONS'
-)
-
-CORS_ALLOW_HEADERS = list(default_headers) + [
-    'X-CSRFToken',
-]
-CORS_EXPOSE_HEADERS = ['Content-Type', 'X-CSRFToken']
+# CORS_ALLOW_METHODS = (
+#     'GET',
+#     'POST',
+#     'PUT',
+#     'PATCH',
+#     'DELETE',
+#     'OPTIONS'
+# )
+#
+# CORS_ALLOW_HEADERS = list(default_headers) + [
+#     'X-CSRFToken',
+# ]
+# CORS_EXPOSE_HEADERS = ['Content-Type', 'X-CSRFToken']
 
 # CELERY
 CELERY_ACCEPT_CONTENT = ['application/json']
