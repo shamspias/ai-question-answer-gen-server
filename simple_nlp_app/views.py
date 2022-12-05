@@ -44,7 +44,7 @@ class AnswerGenViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
         return Response(context, status=status.HTTP_201_CREATED, )
 
 
-class PersonaViewSet(viewsets.GenericViewSet):
+class PersonaViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     """
     Get Persona
     """
@@ -52,8 +52,15 @@ class PersonaViewSet(viewsets.GenericViewSet):
     serializer_class = PersonaSerializers
     permission_classes = [permissions.AllowAny, ]
 
+    def create(self, request, *args, **kwargs):
+        data = request.data
+        context = {
+            "test": "test"
+        }
+        return Response(context, status=status.HTTP_201_CREATED, )
 
-class VerticalViewSet(viewsets.GenericViewSet):
+
+class VerticalViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     """
     Get Vertical
     """
@@ -61,11 +68,25 @@ class VerticalViewSet(viewsets.GenericViewSet):
     serializer_class = VerticalSerializers
     permission_classes = [permissions.AllowAny, ]
 
+    def create(self, request, *args, **kwargs):
+        data = request.data
+        context = {
+            "test": "test"
+        }
+        return Response(context, status=status.HTTP_201_CREATED, )
 
-class SalesPersonViewSet(viewsets.GenericViewSet):
+
+class SalesPersonViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     """
     Get SalesPerson
     """
     queryset = SalesPerson.objects.all()
     serializer_class = SalesPersonSerializers
     permission_classes = [permissions.AllowAny, ]
+
+    def create(self, request, *args, **kwargs):
+        data = request.data
+        context = {
+            "test": "test"
+        }
+        return Response(context, status=status.HTTP_201_CREATED, )
