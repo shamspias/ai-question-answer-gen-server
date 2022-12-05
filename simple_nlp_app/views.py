@@ -1,8 +1,14 @@
 from rest_framework import viewsets, permissions, mixins
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import QuestionsSerializers, AnswerSerializers
-from .models import Questions, Answer
+from .serializers import (
+    QuestionsSerializers,
+    AnswerSerializers,
+    VerticalSerializers,
+    PersonaSerializers,
+    SalesPersonSerializers
+)
+from .models import Questions, Answer, Vertical, Persona, SalesPerson
 from .task import generate_questions, generate_answers
 
 
@@ -36,3 +42,30 @@ class AnswerGenViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
         context = generate_answers(data['number'], data['types'], data['sales_person'], data['vertical'],
                                    data['persona'], data['question'])
         return Response(context, status=status.HTTP_201_CREATED, )
+
+
+class PersonaViewSet(viewsets.GenericViewSet):
+    """
+    Get Persona
+    """
+    queryset = Persona.objects.all()
+    serializer_class = PersonaSerializers
+    permission_classes = [permissions.AllowAny, ]
+
+
+class VerticalViewSet(viewsets.GenericViewSet):
+    """
+    Get Vertical
+    """
+    queryset = Vertical.objects.all()
+    serializer_class = VerticalSerializers
+    permission_classes = [permissions.AllowAny, ]
+
+
+class SalesPersonViewSet(viewsets.GenericViewSet):
+    """
+    Get SalesPerson
+    """
+    queryset = SalesPerson.objects.all()
+    serializer_class = SalesPersonSerializers
+    permission_classes = [permissions.AllowAny, ]
