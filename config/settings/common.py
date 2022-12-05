@@ -119,8 +119,8 @@ sentry_sdk.init(dsn=os.getenv('SENTRY_DSN', ''), integrations=[DjangoIntegration
 
 # CORS
 
-CSRF_COOKIE_SECURE = bool(os.getenv('CSRF_COOKIE_SECURE', True))
-SESSION_COOKIE_SECURE = bool(os.getenv('SESSION_COOKIE_SECURE', True))
+# CSRF_COOKIE_SECURE = bool(os.getenv('CSRF_COOKIE_SECURE', True))
+# SESSION_COOKIE_SECURE = bool(os.getenv('SESSION_COOKIE_SECURE', True))
 
 # False since we will grab it via universal-cookies
 CSRF_COOKIE_HTTPONLY = bool(os.getenv('CSRF_COOKIE_HTTPONLY', False))
