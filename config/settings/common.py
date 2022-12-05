@@ -171,8 +171,8 @@ USE_L10N = bool(os.getenv('USE_L10N', True))
 LOGIN_REDIRECT_URL = '/'
 
 # Headers
-# USE_X_FORWARDED_HOST = True
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Static files (CSS, JavaScript, Images)
 
