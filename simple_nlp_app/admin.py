@@ -1,10 +1,6 @@
 from django.contrib import admin
 
-from .models import Questions, Answer, Persona, Vertical, SalesPerson
-
-admin.site.register(Questions)
-admin.site.register(Answer)
-
+from .models import Persona, Vertical, SalesPerson
 
 admin.site.register(Persona)
 admin.site.register(Vertical)

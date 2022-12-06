@@ -38,6 +38,7 @@ class Persona(models.Model):
     Model for Persona
     """
     name = models.CharField(max_length=250, blank=True, null=True)
+    categories = models.CharField(max_length=250, blank=True, null=True)
 
     def __str__(self):
         return self.name
