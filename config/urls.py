@@ -43,3 +43,7 @@ urlpatterns = [
                   path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = "Omnaible QA Admin"
+admin.site.site_title = "Omnaible QA Admin Portal"
+admin.site.index_title = "Welcome to Omnaible QA Portal"
