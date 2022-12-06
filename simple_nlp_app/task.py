@@ -14,13 +14,13 @@ def generate_questions(number=1, types="short", person1="Sales Representative", 
 
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="Write {} {} questions from {} to {} about {} based on {}\n-".format(number, types, person1, vertical,
-                                                                                    person2, prompt),
-        temperature=0.7,
-        max_tokens=256,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0
+        prompt="Write {} {} questions where {} asking to {} about {} based on {}\n-".format(number, types, person1,
+                                                                                            person2, vertical, prompt),
+    temperature = 0.7,
+    max_tokens = 256,
+    top_p = 1,
+    frequency_penalty = 0,
+    presence_penalty = 0
     )
     my_text = response['choices'][0]['text'].split("\n")
 
