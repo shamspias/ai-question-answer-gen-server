@@ -14,8 +14,8 @@ def generate_questions(number=1, types="short", person1="Sales Representative", 
 
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="Write {} {} questions from {} on {} to {} based on {}\n-".format(number, types, person1, vertical,
-                                                                                 person2, prompt),
+        prompt="Write {} {} questions from {} to {} about {} based on {}\n-".format(number, types, person1, vertical,
+                                                                                    person2, prompt),
         temperature=0.7,
         max_tokens=256,
         top_p=1,
@@ -48,8 +48,8 @@ def generate_answers(number=1, types="short", person1="Sales Representative", ve
 
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="Write {} {} answer as a {} given to {} about {} from \n {}\n-".format(number, types, person1,
-                                                                                      person2, vertical, prompt),
+        prompt="Write {} {} answer as a {} given to {} about {} from \n {}\n-".format(number, types, person2,
+                                                                                      person1, vertical, prompt),
         temperature=0.7,
         max_tokens=256,
         top_p=1,
