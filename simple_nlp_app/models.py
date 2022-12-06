@@ -41,6 +41,7 @@ class Persona(models.Model):
     Model for Persona
     """
     name = models.CharField(max_length=250, blank=True, null=True)
+    categories = models.ForeignKey(ConversationalDirection, blank=True, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
