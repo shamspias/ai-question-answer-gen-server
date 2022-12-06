@@ -42,7 +42,7 @@ def generate_questions(number=1, types="short", person1="Sales Representative", 
 def generate_answers(number=1, types="short", person1="Sales Representative", vertical="AI", person2="CEO",
                      prompt=""):
     """
-    Method to generate question answers from OpenAI using GPT3
+    Method to generate questions from OpenAI using GPT3
     """
     openai.api_key = settings.OPEN_AI_KEY
 
