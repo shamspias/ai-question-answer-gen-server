@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Questions, Answer, Persona, Vertical, SalesPerson
+from .models import Questions, Answer, Persona, Vertical, SalesPerson, ConversationalDirection
 
 
 class QuestionsSerializers(serializers.ModelSerializer):
@@ -22,14 +22,28 @@ class AnswerSerializers(serializers.ModelSerializer):
         fields = "__all__"
 
 
+# class ConversationalDirectionSerializer(serializers.ModelSerializer):
+#     """
+#     Serializer class for Answer Category
+#     """
+#
+#     class Meta:
+#         model = ConversationalDirection
+#         fields = ['categories', ]
+
+
 class PersonaSerializers(serializers.ModelSerializer):
     """
     Serializer class for Persona
     """
+    categories = serializers.SlugRelatedField(
+        read_only=True,
+        slug_field="categories"
+    )
 
     class Meta:
         model = Persona
-        fields = "__all__"
+        fields = ['name', 'categories']
 
 
 class VerticalSerializers(serializers.ModelSerializer):
