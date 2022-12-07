@@ -44,7 +44,7 @@ class AnswerGenViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
         return Response(context, status=status.HTTP_201_CREATED, )
 
 
-class PersonaViewSet(viewsets.ModelViewSet):
+class PersonaViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     Get Persona
     """
@@ -53,7 +53,7 @@ class PersonaViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny, ]
 
 
-class VerticalViewSet(viewsets.ModelViewSet):
+class VerticalViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     Get Vertical
     """
@@ -62,7 +62,7 @@ class VerticalViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny, ]
 
 
-class SalesPersonViewSet(viewsets.ModelViewSet):
+class SalesPersonViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     Get SalesPerson
     """

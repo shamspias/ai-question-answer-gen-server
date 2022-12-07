@@ -22,16 +22,6 @@ class AnswerSerializers(serializers.ModelSerializer):
         fields = "__all__"
 
 
-# class ConversationalDirectionSerializer(serializers.ModelSerializer):
-#     """
-#     Serializer class for Answer Category
-#     """
-#
-#     class Meta:
-#         model = ConversationalDirection
-#         fields = ['categories', ]
-
-
 class PersonaSerializers(serializers.ModelSerializer):
     """
     Serializer class for Persona
